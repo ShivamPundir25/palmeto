@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html>
+<script>
+var index=0;
+   function change_day()
+    {
+if (index>6)
+{
+index=0;
+}
+
+var days=['Monday ... ','Tuesday ... ','Wednesday ... ','Thursday ... ','Friday ... ','Saturday ... ','Sunday ... '];
+var text=document.createTextNode(days[index]);
+var p=document.createElement(p);
+var temp=p.appendChild(text);
+document.body.appendChild(temp);
+index=index +1;
+ }
+
+
+
+</script>
+<body>
+   <input type="submit" value="button"  onclick="change_day()">
+</body>
+</html>
+
+<!--
+(b) Modify the program so that the initial text shown on the screen is "Monday", and it will change 
+in the following way when the button is
+
+pressed repeatedly: Monday ... Tuesday ... Wednesday ... Thursday ... Friday ... Saturday ... Sunday 
+... Monday ... Tuesday ... etc. You should also change the button text so that ther
+-->

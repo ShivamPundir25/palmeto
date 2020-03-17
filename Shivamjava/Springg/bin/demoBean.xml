@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+   <bean id="details" class="demo.MainClass1"> 
+   
+   <constructor-arg value="123"  type ="int" />
+   <constructor-arg value="nahi"/>
+  <!-- constructor-arg is using for initializing the parameterized 
+  contructor in pojo class ....
+  if there are more than one parameter in contructor then 
+  order of contructor argument must be from left to right  -->
+  
+   <property name="name" value="shivam"></property>
+   <property name="id" value="844314"></property>
+   <property name="company" value="COGNIZANT"></property>
+   </bean>
+ 
+
+</beans>

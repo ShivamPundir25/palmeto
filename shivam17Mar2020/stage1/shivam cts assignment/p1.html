@@ -1,0 +1,27 @@
+<html>
+
+
+<head>
+<script>
+var country= document.createElement("ol");
+function countrylist()
+{
+
+var clist=document.createElement("li");
+var x=document.getElementById("data").value;
+var cname=document.createTextNode(x);
+clist.appendChild(cname);
+country.appendChild(clist);
+document.body.appendChild(country);
+
+
+}
+</script>
+</head>
+
+
+<body>
+Enetr the data : <input type="text" id="data"/>
+<input type="submit" value="Create" onclick="countrylist()"/>
+</body>
+</html>

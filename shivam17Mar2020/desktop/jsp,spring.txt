@@ -1,0 +1,36 @@
+1. Write a JSP that takes the user’s name and age from a 
+form. -Echo backs the name and age along with a message 
+stating the price of movie tickets. -The price is determined
+by the age passed to the JSP. -If the age is greater than 62,
+the movie ticket price is $7.00. -If the user is less than 10
+years old, the price is $5.00. -For everyone else, the price is $9.50.
+
+2. Write a program using jsp and JDBC for developing an online 
+application for the shopping of computer science books. (Hint: use
+ concept of session tracking) You have to create a database for book 
+title, author(s) of book, publisher, year of publication, price.
+ Make necessary assumptions for book shopping.
+
+Your application has to perform the following activities:
+
+a. Display all books available
+
+b. Select the books and add to cart
+
+c. Once checkout is done, display the selected books along with total.
+
+3. Write a spring program which will demonstrates the spring life cycle bean post processor methods.
+
+4. Write a simple spring program to implement Dependency injection using constructor method for dependent objects and Map objects.
+
+5. Write a spring jdbc program to display all the records from any table from the mysql database.
+
+
+create table book(book_title varchar(20),author_of_book varchar(20),publisher varchar(20),year_of_publication bigint(10),price bigint(10));
+
+insert into book values("c","surya","rameshKaja",2019,100);
+insert into book values("c++","hari","kiran",2018,90);
+insert into book values("java","Aravind","Sai",2020,10);
+insert into book values("python","venakat","raja",2021,5);
+insert into book values("js","chandu","swaroop",2022,1);
+

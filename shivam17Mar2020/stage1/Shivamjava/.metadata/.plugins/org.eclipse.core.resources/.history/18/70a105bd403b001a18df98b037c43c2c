@@ -1,0 +1,13 @@
+
+package ExceptionExamplesAssessment;
+import java.util.function.Predicate;
+public class StringPredicateExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ Predicate<String> s=str->(str.charAt(0)=='K');
+ System.out.println(s.test("Kamlesh"));
+ System.out.println(s.test("samlesh"));
+	}
+
+}

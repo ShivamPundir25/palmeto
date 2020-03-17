@@ -1,0 +1,3 @@
+select rental_id,car_id,customer_id,km_driven from rentals
+where monthname(return_date)='AUGUST' and year(return_date)=2019
+order by rental_id;

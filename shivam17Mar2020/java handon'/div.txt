@@ -1,0 +1,29 @@
+import java.util.*;
+public class Division{
+     public static void main(String args[]){
+        Scanner sc=new Scanner(System.in); 
+        Division div=new Division();
+        int number1=sc.nextInt();
+        int number2=sc.nextInt();
+        
+        div.divideTwoNumbers(number1,number2);
+    }
+    public String divideTwoNumbers(int number1,int number2){
+        int result=0;
+        String str="";
+        if(number2==0){
+        try{
+            result=number1/number2;
+        }
+        catch(ArithmeticException e){
+            str="Division by zero is not possible. Thanks for using the application.";
+        }
+        finally{
+            str="The answer is"+result+"Thanks for using the application.";
+        }
+        }
+         return str;
+    }
+   
+   
+}

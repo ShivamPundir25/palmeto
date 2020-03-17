@@ -1,0 +1,19 @@
+import java.util.*;
+ 
+class PanCard {
+ 
+public static void main(String[] args) 
+{
+    System.out.println("Enter the PAN no");
+Scanner sc = new Scanner(System.in);
+
+String s1= sc.next();
+
+if(s1.matches("[A-Z]{5}[0-9]{4}[A-Z]{1}"))
+{
+System.out.println("Valid PAN no");
+}
+else
+System.out.println("Invalid PAN no");
+}
+}

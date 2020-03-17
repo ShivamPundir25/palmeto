@@ -1,0 +1,41 @@
+
+public class UserMainCode {
+	static int n;
+	static String size="";
+	
+ public static int checkUnique(String s)
+ {
+	 //char[] arr1=new char[s.length()];
+	
+	 for(int i=0;i<s.length();i++)
+	 {
+		 int count=-1;
+		
+		 for(int j=0;j<=(s.length());j++)
+		 { 
+			 
+			 if(i==j)
+			 {
+				 continue;
+			 }
+			 
+			 if((s.charAt(i))!=(s.charAt(j)))
+			 {
+				
+				 count++;
+				  break;
+			 }	 
+			  if(count!=-1) {
+			  size=size+(char)s.charAt(i); 
+			
+				 }
+		     
+		 }
+	 }
+	 System.out.println(size);
+	 n=size.length();
+	 return n;
+ }
+ 
+ 
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Entry PAge</title>
+</head>
+<body>
+<a href="DisplayEmployee.servlet">Display Employee</a>
+<a href="DeleteEmployee.servlet">DeleteEmployee</a>
+<a href="SearchEmployee.servlet">SearchEmployee</a>
+<a href="UpdateEmployee.servlet">UpdateEmployee</a>
+<a href="AddEmployee.servlet">AddEmployee</a>
+</body>
+</html>

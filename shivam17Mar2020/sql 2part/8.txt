@@ -1,0 +1,3 @@
+select hotel_id,hotel_name,hotel_type from hotel_details where hotel_id 
+NOT IN(select hotel_id from orders where monthname(order_date)='MAY' and
+year(order_date)=2019);

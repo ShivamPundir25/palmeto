@@ -1,0 +1,52 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+class Test
+{
+   public float calculateAverage(int[] age)
+   {
+       float avg=0,s=0;
+       int n=age.length;
+       for(int i=0;i<n;i++)
+        {
+           s=s+age[i];
+       }
+       avg=(s/n);
+       return avg;
+   }
+   public static void main(String[] args)
+   {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter total no.of employees:");
+       int n=sc.nextInt();
+       
+       int flag=0;
+       
+       if(n<2)
+       {
+           System.out.println("Please enter a valid employee count");
+       }
+       else
+       {
+            int[] a=new int[n];
+            System.out.println("Enter the age for "+n+" employees:");
+            for(int i=0;i<n;i++)
+            {
+                   a[i]=sc.nextInt();
+                    if(a[i]<28||a[i]>40)
+                    {
+                        System.out.println("Invalid age encountered!");
+                         flag=1;
+                         break;
+                    }
+            }
+            if(flag==0)
+           {
+               Test t=new Test();
+               float result=t.calculateAverage(a);
+                DecimalFormat df = new DecimalFormat("###.##");
+               System.out.printf("The average age is %.2f",result);
+           }        
+         
+       }
+   }
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="processdata.jsp">
+Enter ur name:<input type="text" name="uname">
+Enter ur password:<input type="text" name="upassword">
+<input type="submit" value="SUBMIT">
+</form>
+</body>
+</html>

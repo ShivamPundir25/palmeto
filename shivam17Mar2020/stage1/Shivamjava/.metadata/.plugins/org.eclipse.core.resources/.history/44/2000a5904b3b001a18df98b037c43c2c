@@ -1,0 +1,29 @@
+package ExceptionExamplesAssessment;
+import java.util.function.Predicate;
+public class PredicateJoinExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] x= {3,6,7,8,9,0,498,454,22,46,79};
+ Predicate<Integer> p1=i -> i>20;
+ Predicate<Integer> p2=i -> i%2==0;
+ System.out.println("The number greater than 10:");
+ method1(p1,x);
+ 
+ method1(p2,x);
+ method1(p1.negate(),x);
+ method1(p1.and(p2),x);
+ method1(p1.or(p2),x);
+ 
+	}
+
+	public static void method1(Predicate<Integer>p,int[] x) {
+		for(int y :x)
+		{if(p.test(y))
+		{
+			System.out.println(y);
+		}
+			
+		}
+	}
+}

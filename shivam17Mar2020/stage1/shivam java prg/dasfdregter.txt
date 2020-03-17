@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Problem4 {
+
+	public static void main(String[] args)
+ {
+		SubClass sc=new SubClass();
+Scanner obj= new Scanner(System.in);
+System.out.println("Enter the number:");
+int num=obj.nextInt();
+if (num>=0)
+{
+	fSum(int num);
+	if(s>9)
+	{
+		fSum(s);}
+    }
+
+     else { System.out.println(s);}
+}
+// warning to user
+else System.out.println("Enter a positive number.");
+	
+}
+
+
+
+
+public int class SubClass
+{ 
+	int s=0;
+
+public static int	fSum(int num)
+	{
+		int n=num;
+		int d,r;
+		while(n>=0)
+		{
+		r=n%10;
+		d=n/10;
+		s=s+r;
+		n=d;
+		}
+		return s;
+	}
+}

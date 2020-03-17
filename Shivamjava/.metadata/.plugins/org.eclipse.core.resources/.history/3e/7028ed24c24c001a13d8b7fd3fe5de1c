@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>fist page</title>
+</head>
+<body>
+<h2 align="center"> Welcome here.......<h2>
+<form action="validation.html">
+Enter userid:<input type="text" name="uid">
+Enter password:<input type="text" name="pwd">
+<input type="submit" value="Login"> </form>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Servelet1inSameServerButDiffApp&apos; to &apos;Servelet2inSameServerButDiffApp&apos;&#x0D;&#x0A;- Original project: &apos;webapp2&apos;&#x0D;&#x0A;- Original element: &apos;Servelet1inSameServerButDiffApp&apos;&#x0D;&#x0A;- Renamed element: &apos;Servelet2inSameServerButDiffApp&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Servelet1inSameServerButDiffApp&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Servelet1inSameServerButDiffApp.java[Servelet1inSameServerButDiffApp" matchStrategy="1" name="Servelet2inSameServerButDiffApp" qualified="false" references="true" similarDeclarations="false" stamp="1580972654647" textual="false" version="1.0"/>
+</session>

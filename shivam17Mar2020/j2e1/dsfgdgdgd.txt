@@ -1,0 +1,5 @@
+create table Users(uname varchar(30),passwd varchar(30));
+
+create table Accounts(acno varchar(30),name varchar(30),acktype varchar(30), balance float(30));
+
+ databse= bankingproject;

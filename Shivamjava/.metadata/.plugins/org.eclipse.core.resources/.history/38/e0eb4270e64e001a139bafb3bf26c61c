@@ -1,0 +1,20 @@
+package dao;
+import java.util.List;
+
+import data.Mvc_employee;
+public class EmployeeDao {
+
+	public void getConnection()
+	{}
+	
+	public void insertEmployee(Mvc_employee emp)
+	{
+		
+	}
+	
+	public List<Mvc_employee> showEmployees()
+	{
+		return null;
+		}
+	
+}

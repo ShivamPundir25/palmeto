@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+ <bean id="BaseObject" class="inheritance.SingleInheritance"  >
+ <property name="id" value="844314" ></property>  
+ </bean>  
+   
+ <bean id="ChildObject" parent="BaseObject">
+ <property name="ename" value="SHIVAM PRATAP SINGH" ></property> 
+ <property name="cname" value="COGNIZANT" ></property> 
+ </bean>  
+   
+</beans>

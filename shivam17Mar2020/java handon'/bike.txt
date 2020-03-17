@@ -1,0 +1,68 @@
+import java.util.Scanner;
+class BikeRace
+{
+  public static void main(String[] args)
+  {
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the distance travelled");
+      int distance=sc.nextInt();
+      if(distance==0)
+      {
+          System.out.println("Your bonus points is 0");
+      }
+      else if(distance<0)
+      {
+          System.out.println("Invalid Input");
+      }
+      else{
+         
+        int  n=distance;
+          int i=0,c=0,even=1,odd=1;
+          while(n>0)
+          {
+              int r=n%10;
+              c++;
+              n=n/10;
+          }
+          int[] a=new int[c];
+          int[] t=new int[c];
+          while(distance>0)
+          {
+              int r=distance%10;
+              t[i]=r;
+              i++;
+              distance=distance/10;
+          }
+          int k=0;
+           for(int j=i-1;j>=0;j--)
+          {
+              a[k]=t[j];
+              k++;
+           
+          }
+          for(int j=0;j<k;j++)
+          {
+              if(j%2==0)
+              {
+                 even=even*a[j];
+              }
+              else
+              {
+                 odd=odd*a[j];
+              }
+          }
+          if(even>odd)
+          {
+              System.out.println("Your bonus points is "+even);
+          }
+          else if(odd>even)
+          {
+              System.out.println("Your bonus points is "+odd);
+          }
+          else
+          {
+             System.out.println("Your bonus points is "+(2*even));
+          }
+      }
+  }
+}

@@ -1,0 +1,16 @@
+import java.util.Scanner;
+import java.util.HashMap;
+public class UserMainCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter the size/or number of members:");
+int size=sc.nextInt();
+HashMap hp1=new HashMap();
+for(int i=0;i<size;i++)
+{
+	}
+	}
+
+}

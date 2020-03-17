@@ -1,0 +1,36 @@
+import java.util.*;
+class FirstOccurence
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the string:");
+        String str=sc.nextLine();
+        System.out.println("Enter the character to be searched:");
+        char s=sc.next().charAt(0);
+         System.out.println("Enter the character to replace:");
+        char r=sc.next().charAt(0);
+        int l=str.length();
+        char ch[]=new char[l];
+        ch=str.toCharArray();
+        int f=0;
+        for(int i=0;i<l;i++)
+        {
+            if(ch[i]==s)
+            {
+            f=1;
+            ch[i]=r;
+            break;
+            }
+        }
+        String ss="";
+        for(int i=0;i<l;i++)
+        {
+            ss+=String.valueOf(ch[i]);
+        }
+        if(f==1)
+        System.out.println(ss);
+        else
+        System.out.println("character not found");
+    }
+}

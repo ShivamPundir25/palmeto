@@ -1,0 +1,28 @@
+Banking Management System
+
+The customer can interact with the banking system. Upon starting the application, 
+a menu is displayed . Then the interface is redirected to login console where the 
+user can enter the login details. If the login particulars are valid then the user i
+s taken to a console where he has the entire transaction list that he can perform with the bank.
+
+The user can perform the following operations and transactions
+
+Transactions Menu
+
+1. Login and Validation2. Deposit3. Withdraw4. Get Balance
+
+The functional requirements are as follows
+1. Login and Validation – The customer can perform the transactions only after successful login.
+a. If login fails it alerts the customer with an error message and reverts to login again
+b. If login is successful, then the application redirects to transactions menu.
+2. Withdraw 
+A customer is allowed to enter the amount which heshe wishes to withdraw. If the entered amount 
+is less than the available balance and if after withdraw if the minimum required balance is maintained 
+then allow the transaction.
+3. Deposit 
+A customer is allowed to enter the amount which heshe wishes to deposit. If the entered amount is a 
+negative, the system provides an error message, Otherwise the balance will get updated.
+
+4. Get Balance
+
+a. The bank statement showing credit and debit information of corresponding account must be displayed

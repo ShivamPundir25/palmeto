@@ -1,0 +1,9 @@
+import java.util.Map;
+public class TreeMap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+TreeMap<Integer,Integer> tm=new TreeMap<Integer,Integer>();
+	}
+
+}

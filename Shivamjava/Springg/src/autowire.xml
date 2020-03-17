@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+ <bean id="employee" class="autowire.EmployeeBean" 
+ autowire="constructor">
+  <property name="fullN8ame" value="SHIAVM PRATAP SINGH PUNDIR"/>
+ </bean>
+ <bean id="department" class="autowire.DepartmentBean"> 
+   <property name="name" value="Infastrucutre Dept"/>
+
+ </bean>
+</beans>

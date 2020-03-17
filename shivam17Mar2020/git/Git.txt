@@ -1,0 +1,26 @@
+git init
+git add .
+git status
+git commit -m "first commit"
+git remote add origin1 https://github.com/LAKSHMINAVYATADIKAMALLA/palmeto.git
+git push -u origin1 master
+
+for creating a new branch
+---------------------------
+git branch branch name
+
+to switcht to branch
+git checkout branch name
+
+create a new page in note pad with java
+
+git add .
+
+git status
+
+git commit----
+ git push -------
+
+merging the master
+
+git merge branch name

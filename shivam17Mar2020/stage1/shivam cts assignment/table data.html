@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <script>
+		var t=document.createElement("table");
+		t.setAttribute("border","2");
+		
+       		function dod()
+		{
+  			var r=document.createElement("tr");
+  			var td1=document.createElement("td");
+  			var rd1=document.getElementById("id1").value;
+			var tn1=document.createTextNode(rd1);
+			td1.appendChild(tn1);
+			
+			var td2=document.createElement("td");
+  			var rd2=document.getElementById("id2").value;
+			var tn2=document.createTextNode(rd2);
+			td2.appendChild(tn2);
+
+			var td3=document.createElement("td");
+  			var rd3=document.getElementById("id3").value;
+			var tn3=document.createTextNode(rd3);
+			td3.appendChild(tn3);
+
+			r.appendChild(td1);
+			r.appendChild(td2);
+			r.appendChild(td3);
+			
+			t.appendChild(r);
+
+			document.body.appendChild(t);
+  			
+	       }
+  
+     </script>     
+
+  </head>
+
+
+
+  <body>
+   <table border=5>
+ 			<tr><td>Enter the F-Name:</td><td><input type="text" id="id1"/> </td> </tr> 
+			<tr><td>Enter the Id-card:</td><td><input type="text" id="id2"/></td> </tr>
+			<tr><td>Enter the Phn-no:</td><td><input type="text" id="id3"/></td></tr> 
+    </table>
+    <input type="submit" value="add" onclick="dod()"/>
+  </body>
+</html>

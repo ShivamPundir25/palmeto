@@ -1,0 +1,83 @@
+-------------
+student.java:
+---------------------
+
+public class Student{
+    private int studentId;
+    private String studentName;
+    private String studentAddress;
+    private String collegeName;
+    public Student(int studentId,String studentName,String studentAddress){
+        this.studentId=studentId;
+        this.studentName=studentName;
+        this.studentAddress=studentAddress;
+        this.collegeName="NIT";
+    }
+      public Student(int studentId,String studentName,String studentAddress,String collegeName){
+        this.studentId=studentId;
+        this.studentName=studentName;
+        this.studentAddress=studentAddress;
+        this.collegeName=collegeName;
+    }
+    public int getStudentId(){
+        return this.studentId;
+    }
+     public String getStudentName(){
+        return this.studentName;
+    }
+     public String getStudentAddress(){
+        return this.studentAddress;
+    }
+     public String getCollegeName(){
+        return this.collegeName;
+    }
+}
+
+
+
+----------------------
+studentmain.java:
+----------------------
+
+
+import java.util.*;
+public class StudentMain{
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Student's Id:");
+        int id=sc.nextInt();
+        System.out.println("Enter Student's Name:");
+        String name=sc.next();
+        System.out.println("Enter Student's address:");
+        String add=sc.next();
+        System.out.println("Whether the student is from NIT(Yes/No):");
+        String clg=sc.next();
+        boolean b=true;
+        while(b){
+        if(clg.equalsIgnoreCase("yes")){
+            Student st=new Student(id,name,add);
+            System.out.println("Student id:"+st.getStudentId());
+            System.out.println("Student name:"+st.getStudentName());
+            System.out.println("Address:"+st.getStudentAddress());
+            System.out.println("College name:"+st.getCollegeName());
+            b=false;
+        }
+        else if(clg.equalsIgnoreCase("no")){
+            System.out.println("Enter the college name:");
+            String clgname=sc.next();
+            Student st=new Student(id,name,add,clgname);
+            System.out.println("Student id:"+st.getStudentId());
+            System.out.println("Student name:"+st.getStudentName());
+            System.out.println("Address:"+st.getStudentAddress());
+            System.out.println("College name:"+st.getCollegeName());
+            b=false;
+        }
+        else{
+            System.out.println("Wrong Input");
+            System.out.println("Whether the student is from NIT(Yes/No):");
+            clg=sc.next();
+            b=true;
+        }
+        }
+    }
+}

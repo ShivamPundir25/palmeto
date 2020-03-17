@@ -1,0 +1,35 @@
+import java.util.*;
+class Course
+{
+    public static void main (String[] args) {
+        Scanner s=new Scanner(System.in);
+        int i,count=0;
+        System.out.println("Enter no of course:");
+        int n=s.nextInt();
+        String sub[]=new String[n];
+        if(n<=0)
+        {
+            System.out.println("Invalid Range");
+        }
+        else{
+        System.out.println("Enter course names:");
+        for(i=0;i<n;i++)
+        {
+            sub[i]=s.next();
+        }
+         System.out.println("Enter the course to be searched:");
+        String key=s.next();
+        for(i=0;i<n;i++)
+        {
+        if(sub[i].equals(key))
+        count++;
+        }
+        if(count==1)
+        System.out.println(key+" course is available");
+        else
+        System.out.println(key+" course is not available");
+        }
+       
+    }
+}
+

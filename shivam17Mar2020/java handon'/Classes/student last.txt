@@ -1,0 +1,123 @@
+public class Student{
+    private int id;
+    private String name;
+    private int marks[];
+    private float average;
+    private char grade;
+    public Student(){
+        super();
+    }
+    public Student(int id,String name,int marks[]){
+        this.id=id;
+        this.name=name;
+        this.marks=marks;
+        
+    }
+    public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int[] getMarks() {
+		return marks;
+	}
+	public void setMarks(int[] marks) {
+		this.marks = marks;
+	}
+	public float getAverage() {
+		return average;
+	}
+	public void setAverage(float average) {
+		this.average = average;
+	}
+	public char getGrade() {
+		return grade;
+	}
+	public void setGrade(char grade) {
+		this.grade = grade;
+	}
+	public  void calculateAvg(){
+	    int sum=0;
+	    for(int i=0;i<marks.length;i++){
+	        sum=sum+marks[i];
+	    }
+	    setAverage(sum/(float)marks.length);
+	    System.out.println("Average:"+String.format("%.2f",average));
+	}
+	public void findGrade(){int c=0;
+	    for(int i=0;i<marks.length;i++){
+	        if(marks[i]<50){
+	            c++;
+	        }
+	    }
+	    if(average>=80 && average<=100)
+	        setGrade('O');
+	    else if(c!=0)
+	        setGrade('F');
+	    else
+	        setGrade('A');
+	  System.out.println("Grade:"+getGrade());
+	}
+}
+
+
+
+studentmain.java:
+
+
+
+
+import java.util.*;
+public class StudentMain{
+    public static void main (String[] args) {
+       	Student st=new Student();
+        st=getStudentDetails();
+        st.calculateAvg();
+        st.findGrade();
+        
+    }
+    public static Student getStudentDetails() {
+        Scanner sc=new Scanner(System.in);
+        Student st=new Student();
+        System.out.println("Enter the id:");
+        st.setId(sc.nextInt());
+        System.out.println("Enter the name:");
+        st.setName(sc.next());
+        int arr[];
+        boolean b=true;
+        while(b){
+        System.out.println("Enter the no of subjects:");
+        int size=sc.nextInt();
+        if(size<=0){
+            System.out.println("Invalid number of subject");
+            b=true;
+        }
+        else{
+            b=false;
+        arr=new int[size];
+        for(int i=0;i<size;i++){
+            boolean t=true;
+            while(t){
+            System.out.println("Enter mark for subject "+(i+1)+":");
+            arr[i]=sc.nextInt();
+            if(arr[i]>=0 && arr[i]<=100){
+                t=false;
+            }
+            else{
+                System.out.println("Invalid Mark");
+            }
+            }
+        }
+        st.setMarks(arr);
+        }
+        }
+        return st;
+    }
+}

@@ -1,0 +1,20 @@
+interface RBI
+{
+void loans();
+void savings();
+void deposits();
+}
+
+
+class HDFC implements RBI
+{
+/* void savings() if u do this then it will cause error .
+ Because bydefault the visiblity of interface is public and visiblity of class is Default.
+ So we can not lower the visiblity of interface. */
+
+public void savings()
+{System.out.println("Rules for savings");
+}
+ 
+
+}

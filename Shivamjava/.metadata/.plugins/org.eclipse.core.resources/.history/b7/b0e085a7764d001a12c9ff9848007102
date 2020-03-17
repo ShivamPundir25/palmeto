@@ -1,0 +1,14 @@
+import java.util.Map;
+import java.util.Scanner;
+public class TreeMap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+TreeMap tm=new TreeMap();
+Scanner sc=new Scanner(System.in);
+System.out.println("enter the strength of students");
+int size=sc.nextInt();
+
+	}
+
+}

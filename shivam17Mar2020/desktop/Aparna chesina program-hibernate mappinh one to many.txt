@@ -1,0 +1,257 @@
+create table Items(id int(11) unsigned not null auto_increment,
+			cart_id int(11) unsigned not null,
+			item_id varchar(10) not null,
+			item_total decimal(10,0) not null,
+			quantity int(3) not null,
+			PRIMARY KEY (id),foreign key(cart_id) references cart(cart_id));
+
+create table Cart(cart_id int(11) unsigned NOT NULL AUTO_INCREMENT,
+     			total decimal(10,0) NOT NULL,
+     			name varchar(10) DEFAULT NULL,
+     			PRIMARY KEY (cart_id));
+
+insert into cart values(201,3500,'Aparna');
+insert into cart values(202,50,'MyCart');
+insert into cart values(203,50,'NewCart');
+insert into Items values(101,'201',1001,3500,4);
+insert into Items values(102,202,'I1',10,1);
+insert into Items values(103,202,'I2',20,2);
+insert into Items values(104,203,'I1',10,1);
+insert into Items values(105,203,'I2',20,2);
+
+
+package model;
+public class Items 
+{
+	private long id;
+	private String itemId;
+	private double itemTotal;
+	private int quantity;
+	private Cart cart;
+	public Items(String itemId, double itemTotal, int quantity, Cart cart) {
+		super();
+		this.itemId = itemId;
+		this.itemTotal = itemTotal;
+		this.quantity = quantity;
+		this.cart = cart;
+	}
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getItemId() {
+		return itemId;
+	}
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
+	public double getItemTotal() {
+		return itemTotal;
+	}
+	public void setItemTotal(double itemTotal) {
+		this.itemTotal = itemTotal;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+}
+
+
+package model;
+
+import java.util.Set;
+
+public class Cart 
+{
+	private long id;
+	private double total;
+	private String name;
+	private Set<Items> items;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public double getTotal() {
+		return total;
+	}
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Set<Items> getItems() {
+		return items;
+	}
+	public void setItems(Set<Items> items) {
+		this.items = items;
+	}
+	
+}
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+"-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+
+<hibernate-mapping package="model" >
+	<class name="Items" table="ITEMS" >
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="itemId" type="string" >
+			<column name="item_id" />
+		</property>
+		<property name="itemTotal" type="double" >
+			<column name="item_Total" />
+		</property>
+		<property name="quantity" type="integer" >
+			<column name="quantity" />
+		</property>
+		
+		<many-to-one name="cart" class="Cart" >
+			<column name="cart_id" not-null="true"> </column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+"-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+
+<hibernate-mapping package="model" >
+	<class name="Cart" table="CART" >
+		<id name="id" type="long">
+			<column name="cart_id" />
+			<generator class="identity" />
+		</id>
+		<property name="total" type="double" >
+			<column name="total" />
+		</property>
+		<property name="name" type="string" >
+			<column name="name" />
+		</property>
+		<set name="items" table="ITEMS" fetch="select" >
+			<key>
+				<column name="cart_id" not-null="true"> </column>
+			</key>
+			<one-to-many class="Items" />
+		</set>
+	</class>
+</hibernate-mapping>
+
+
+package model;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateUtil
+{
+	private static SessionFactory sessionFactory;
+	public static SessionFactory getSessionFactory()
+	{
+		SessionFactory factory=new Configuration()
+				.configure("hibernate.cfg.xml")
+				.buildSessionFactory();
+		return factory;
+	}
+}
+
+
+package model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+public class HibernateOneToManyMain
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Cart cart=new Cart();
+		cart.setName("NewCart");
+		
+		Items item1=new Items("I1",10,1,cart);
+		Items item2=new Items("I2",20,2,cart);
+		Set<Items> itemsSet =  new HashSet<Items>();
+		itemsSet.add(item1);
+		itemsSet.add(item2);
+		cart.setItems(itemsSet);
+		cart.setTotal(10*1+20*2);
+		
+		SessionFactory sessionFactory=null;
+		Session session=null;
+		Transaction tx=null;
+		
+		try
+		{
+			sessionFactory=HibernateUtil.getSessionFactory();
+			session=sessionFactory.openSession();
+			System.out.println("Session Created");
+			tx=session.beginTransaction();
+			session.save(cart);
+			session.save(item1);
+			session.save(item2);
+			tx.commit();
+			System.out.println("Cart ID="+cart.getId());
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception Occured."+e.getMessage());
+			e.printStackTrace();
+		}
+		finally
+		{
+			if(!sessionFactory.isClosed())
+			{
+				System.out.println("Closing SessionFactory");
+				sessionFactory.close();
+			}
+		}
+	}
+}
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+         "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
+         "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">  
+ 
+<hibernate-configuration>  
+   <session-factory>  
+   <property name="hbm2ddl.auto">update</property>
+   <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+   <property name="connection.url">jdbc:mysql://localhost:3306/cts</property>
+   <property name="connection.username">root</property>
+   <property name="connection.password">root</property>
+   <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+   
+   <mapping resource="cart.hbm.xml"/>
+   <mapping resource="items.hbm.xml"/>
+   </session-factory>
+</hibernate-configuration>

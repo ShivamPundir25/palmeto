@@ -1,0 +1,126 @@
+CREATE TABLE air_ticket_info(TICKET_ID VARCHAR(10),PROFILE_ID VARCHAR(10),FLIGHT_ID VARCHAR(10),FLIGHT_DEPARTURE_DATE DATE,STATUS VARCHAR(10),PRIMARY KEY(TICKET_ID));
+
+
+CREATE TABLE air_flight(FLIGHT_ID VARCHAR(10),AIRLINE_ID VARCHAR(10),AIRLINE_NAME VARCHAR(30),FROM_LOCATION VARCHAR(20),TO_LOCATION VARCHAR(20),DEPARTURE_TIME TIME,ARRIVAL_TIME TIME,DURATION TIME,TOTAL_SEATS INT(11),PRIMARY KEY(FLIGHT_ID));
+
+CREATE TABLE air_passenger_profile(PROFILE_ID VARCHAR(10),PASSWORD VARCHAR(10),FIRST_NAME VARCHAR(10),LAST_NAME VARCHAR(10),ADDRESS VARCHAR(100),MOBILE_NUMBER BIGINT(10),EMAIL_ID VARCHAR(30),PRIMARY KEY(PROFILE_ID));
+
+ALTER TABLE air_ticket_info ADD FOREIGN KEY(PROFILE_ID) REFERENCES air_passenger_profile(PROFILE_ID),FOREIGN KEY(FLIGHT_ID) REFERENCES air_flight(FLIGHT_ID);
+
+ALTER TABLE air_ticket_info ADD FOREIGN KEY(FLIGHT_ID) REFERENCES air_flight(FLIGHT_ID);
+
+
+CREATE TABLE air_credit_card_details(PROFILE_ID VARCHAR(10),CARD_NUMBER BIGINT(16),CARD_TYPE VARCHAR(10),EXPIRATION_MONTH INT(2),EXPIRATION_YEAR INT(4),FOREIGN KEY(PROFILE_ID) REFERENCES air_passenger_profile(PROFILE_ID));
+
+CREATE TABLE air_flight_details(FLIGHT_ID VARCHAR(10),FLIGHT_DEPARTURE_DATE DATE, PRICE DECIMAL(8,2),AVAIBLABLE_SEATS INT(11),FOREIGN KEY(FLIGHT_ID) REFERENCES air_flight(FLIGHT_ID));
+
+ALTER TABLE air_flight_info ADD PRIMARY KEY(FLIGHT_ID);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------=-------------------------------------
+
+
+
+ 
+INSERT INTO air_ticket_info VALUES ALTER TABLE air_ticket_info ADD FOREIGN KEY(PROFILE_ID) REFERENCES air_passenger_profile(PROFILE_ID),FOREIGN KEY(FLIGHT_ID) REFERENCES air_flight(FLIGHT_ID);
+ 
+
+
+CREATE  TABLE air_ticket_info 
+( 
+ticket_id VARCHAR(45) not null unique primary key, 
+profile_id VARCHAR(10) NULL , 
+flight_id VARCHAR(45) NULL , 
+flight_departure_date DATE NULL , 
+status VARCHAR(45) NULL ,
+foreign key(PROFILE_ID) references air_passenger_profile (PROFILE_ID),
+foreign key(FLIGHT_ID) references air_flight_details (FLIGHT_ID)
+);
+); 
+
+
+
+ 
+INSERT INTO air_ticket_info VALUES 
+(1, 1, 3179, '2013-05-06', 'delayed'), 
+(2, 5, 3179, '2013-04-03', 'on time'), 
+(3, 4, 3180, '2013-04-02', 'on time'), 
+(4, 2, 3177, '2013-06-15', 'on time'), 
+(5, 3, 3176, '2013-03-14', 'on time'), 
+(6, 1, 3071, '2013-03-15', 'on time'), 
+(7, 4, 3172, '2013-02-06', 'delayed'), 
+(8, 2, 3177, '2013-06-05', 'on time'), 
+(9, 3, 3071, '2013-03-15', 'on time'), 
+(10, 1, 3175, '2013-05-25', 'on time'), 
+(11, 3, 3177, '2013-06-15', 'on time'); 
+
+
+
+
+
+
+
+INSERT INTO air_flight VALUES 
+(3172, 'AR342', 'fgh', 'kolkata', 'chennai', '11:30:00', '13:00:00', '1:30:00', 100), 
+(3071, 'JT564', 'jkl', 'chennai', 'delhi', '08:00:00', '10:00:00', '2:00:00', 100), 
+(3170, 'DT345', 'xyz', 'delhi', 'kolkata', '21:00:00', '22:30:00', '1:30:00', 100), 
+(3175, 'MJ654', 'abc', 'chennai', 'hyderabad', '15:00:00', '16:00:00', '1:00:00', 200), 
+(3176, 'MH370', 'def', 'kochi', 'chennai', '18:00:00', '19:05:00', '1:05:00', 100), 
+(3177, 'MH45',  'fgh', 'delhi', 'kochi', '19:00:00', '21:00:00', '2:00:00', 200), 
+(3174, 'MH321', 'xyz', 'kolkata', 'delhi', '0:00:00', '2:00:00', '2:00:00', 100), 
+(3179, 'JT435', 'abc', 'chennai', 'kolkata', '14:00:00', '15:00:00', '1:00:00', 100), 
+(3180, 'JT456', 'ijk', 'kolkata', 'kochi', '5:00:00', '5:45:00', '0:45:00', 200); 
+
+1. Write a query to display the average monthly ticket 
+cost for each flight in ABC  Airlines. 
+The query should display the Flight_Id,From_location,
+To_Location,Month Name as “Month_Name” and average
+ price as “Average_Price”. 
+Display the records sorted in ascending order based 
+on flight id and then by Month Name. 
+2.Write a query to display the number of flight
+ services between locations in a month.
+ The Query should display From_Location, 
+To_Location, Month as “Month_Name” and 
+number of flight services as “No_of_Services”. 
+ Hint: The Number of Services can be calculated 
+from the number of scheduled departure dates of 
+a flight. 
+3.Write a query to display the customer(s) who 
+has/have booked least number of tickets in ABC Airlines.
+ The Query should display profile_id, customer’s 
+first_name, Address and Number of tickets 
+4. Write a query to display the number of tickets
+ booked from Chennai to Hyderabad. 
+The Query should display passenger profile_id,
+first_name,last_name, Flight_Id , Departure_Date
+ and  number of tickets booked as “No_of_Tickets”.
+Display the records sorted in ascending order based 
+on profile id and then by flight id and then by 
+departure date. 
+booked as “No_of_Tickets”Display the records sorted in
+ ascending order based on customer's first name
+The records should be displayed in ascending order 
+based on From_Location and then by To_Location and 
+then by month name. 
+5. Write a query to display flight id,from location, 
+to location and ticket price of flights whose 
+departure is in the month of april.
+Display the records sorted in ascending order based 
+on flight id and then by from location. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

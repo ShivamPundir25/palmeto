@@ -1,0 +1,5 @@
+
+public class Emps1 {
+private String name;
+private String dept;
+}

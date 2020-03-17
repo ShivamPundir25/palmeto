@@ -1,0 +1,10 @@
+package ExceptionExamplesAssessment;
+import java.util.function.Predicate;
+public class PredicateJoinExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ Predicate<Integer> 
+	}
+
+}

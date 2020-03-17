@@ -1,0 +1,9 @@
+package ExceptionExamplesAssessment;
+
+public class Exception1Method2 {
+
+	public Exception1Method2() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

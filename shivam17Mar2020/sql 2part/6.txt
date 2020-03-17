@@ -1,0 +1,2 @@
+select partner_id,partner_name, if(rating>=4,'GOOD',if(rating>=2,'AVERAGE','WORST')) as REVIEW from delivery_partners
+order by partner_id;

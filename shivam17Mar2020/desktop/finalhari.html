@@ -1,0 +1,60 @@
+<html>
+    <head>
+         <style>
+                body
+                {
+                      background-colour:#EED426;
+                }
+         </style>
+    </head>
+    <body>
+          <center>
+        <table>
+        <tr>
+            <td><label>Customer Name</label></td>
+            <td><input type="textbox" name="custname" placeholder="Enter the customername" pattern="[a-zA-Z" "]{*}" required/></td>
+        </tr>
+        <tr>
+            <td><label>Customer Email</label></td>
+            <td><input type="email" name="email" placeholder="abc@gmail.com" required/></td>
+        </tr>
+         <tr>
+            <td><label>Mobile Number</label></td>
+            <td><input type="number" name="mobile" placeholder="Enter the MobileNumber" pattern="[7-9]{1}[0-9]{9}" required/></td>
+        </tr>
+         <tr>
+            <td><label>Connection Type</label></td>
+            <td>
+                <select id="Connectiontype" name="conntype" required>
+                    <option>pre</option>
+                    <option>post</option>
+                    
+                </select>
+            </td>
+        </tr>
+        <tr>
+           <td><label>Scheme Name</label></td>
+           <td>
+               <input type="radio" id="scheme1" name="conntype" required>Local
+               <input type="radio" id="scheme2" name="conntype">STD
+               <input type="radio" id="scheme3" name="conntype">FullTalkTime
+           </td> 
+        </tr>
+        <tr>
+            <td><label>Connection Duration</label></td>
+            <td><input type="number" name="duartion" min="1" max="12" required>
+        </tr>
+        <tr>
+           <td> <input type="submit" value="Calculate Bill Amount"></td>
+           <td> <input type="reset" value="Reset"></td>
+        </tr>
+        </table>
+        <center><p>Rental Cost table</p></center>
+        <table id="rentalcost" border="1">
+            <tr><th> Connection Type</th><th>Call Limit</th><th>Monthly Rental</th></tr>
+            <tr><td>Pre</td><td>500</td><td>75</td></tr>
+            <tr><td>Post</td><td>Unlimited</td><td>150</td></tr>
+       </table>
+      </center>
+    </body>
+</html>

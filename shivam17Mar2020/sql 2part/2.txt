@@ -1,0 +1,3 @@
+select distinct hd.hotel_id,hd.hotel_name,hd.rating from 
+hotel_details hd join orders o on hd.hotel_id=o.hotel_id 
+where monthname(o.order_date)='July'  order by hd.hotel_id;

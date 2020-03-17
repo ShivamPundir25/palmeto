@@ -1,0 +1,10 @@
+package ExceptionExamplesAssessment;
+
+public class Exception1Method extends Exception{
+
+	public Exception1Method() {
+		// TODO Auto-generated constructor stub
+		super("The square value is");
+	}
+
+}

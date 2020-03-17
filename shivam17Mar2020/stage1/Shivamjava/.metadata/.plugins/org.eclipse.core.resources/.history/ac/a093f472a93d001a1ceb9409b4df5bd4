@@ -1,0 +1,21 @@
+package MapsExample;
+import java.util.*;
+
+public class HashMApExample3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+HashMap<Integer,Integer> stats=new HashMap<Integer,Integer>();
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter the number of entries");
+int n=sc.nextInt();
+for(int i=0;i<n;i++)
+{System.out.println("Enter the year:");
+int year=sc.nextInt();
+System.out.println("Enter the number of admission:");
+int noa=sc.nextInt();
+stats.put(year, noa);
+	}
+	}
+
+}

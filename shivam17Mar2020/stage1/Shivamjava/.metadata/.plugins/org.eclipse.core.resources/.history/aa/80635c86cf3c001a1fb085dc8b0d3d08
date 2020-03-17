@@ -1,0 +1,23 @@
+import java.util.function.*;
+public class BiFunctionInterface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BiFunction <String,String,Student> bif=(name,htno)->new Student(name,htno);
+		Student s1=bif.apply("HAri","1234");
+		Student s2=bif.apply("ishwar","567");
+		System.out.println(s1);
+		System.out.println(s2);
+ 
+	}
+
+}
+ class Student{
+	 String name;
+	 String htno;
+	public Student(String name, String htno) {
+		this.name = name;
+		this.htno = htno;
+	}
+	 
+ }

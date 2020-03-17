@@ -1,0 +1,14 @@
+package data;
+
+public class Mvc_employee {
+ 	 
+int empid;
+private String ename;
+private String dept;
+private String desg;
+private String email;
+  
+public	Mvc_employee();
+
+
+}

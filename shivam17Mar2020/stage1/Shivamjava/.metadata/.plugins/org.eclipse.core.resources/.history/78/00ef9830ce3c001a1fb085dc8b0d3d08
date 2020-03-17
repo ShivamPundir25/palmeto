@@ -1,0 +1,13 @@
+import java.util.function.*;
+
+public class BiPredicateExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+BiPredicate<Integer,Integer> bip=(a,b)->(a+b)%2==0;
+System.out.println(bip.test(10, 2));
+System.out.println(bip.test(2, 7));
+
+	}
+
+}

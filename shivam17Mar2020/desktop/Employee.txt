@@ -1,0 +1,7 @@
+create database Employee;
+use databse Employee;
+
+
+Create table employee(name varchar(30),id bigint(30)
+,dept varchar(30),desg varchar(30),company varchar(30)
+,emailed varchar(30));

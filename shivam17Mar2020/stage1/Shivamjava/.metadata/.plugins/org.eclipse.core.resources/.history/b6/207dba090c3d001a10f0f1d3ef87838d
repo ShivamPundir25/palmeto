@@ -1,0 +1,23 @@
+package MapsExample;
+import java.util.*;
+public class MapsDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+HashMap hm=new HashMap();
+hm.put("k1", "India");
+hm.put("k2", "Bangla");
+hm.put("k3", "Bangla");
+hm.put("k7", "UK");
+hm.put("k4", "USa");
+hm.put("k5", "UAE");
+hm.put("k6", "SriLAnka"); 
+
+
+
+hm.put("k6", "SHivam"); // if we use same key again then the first value will overridden with latest value
+Object obj=hm.put("k6", "SriLanka");
+System.out.println(obj);
+System.out.println(hm);
+
+}}

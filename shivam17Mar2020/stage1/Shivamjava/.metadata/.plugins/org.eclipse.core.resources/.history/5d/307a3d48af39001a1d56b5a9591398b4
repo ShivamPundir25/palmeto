@@ -1,0 +1,18 @@
+package ExceptionExamplesAssessment;
+
+public class RunnableTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+class MyRunThread implements Runnable
+{public void MyRun()
+	{
+	
+	}
+	}

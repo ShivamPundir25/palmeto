@@ -1,0 +1,31 @@
+package dao;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.List;
+
+import data.Mvc_employee;
+public class EmployeeDao {
+
+	public static Connection getConnection() throws SQLException
+	{
+		DriverManager.registerDriver
+		(new com.mysql.cj.jdbc.Driver());
+		
+		Connection connection=DriverManager
+				.getConnection("jdbc:mysql://localhost:3306:employee","root","root");
+		
+		return null;
+	}
+	
+	public void insertEmployee(Mvc_employee emp)
+	{
+		
+	}
+	
+	public List<Mvc_employee> showEmployees()
+	{
+		return null;
+		}
+	
+}

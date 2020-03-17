@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+<bean id="helloWorldService" class="com.examples.HelloBean" >
+<property name="name" value="Hello shivam how are you">
+</property>
+</bean>
+</</beans>

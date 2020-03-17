@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Main Page</title>
+</head>
+<body>
+<a href=home.jsp>Home</a>
+<a href=>About Us</a>
+<a href=>Services</a>
+<a href=>Login</a>
+</body>
+</html>

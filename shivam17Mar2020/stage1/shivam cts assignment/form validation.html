@@ -1,0 +1,117 @@
+<html>
+ <head>
+       <script>
+	function validate()
+	{
+            
+            var x=document.getElementById("uid").value;
+            var y=document.getElementById("pwd").value;
+	    var name=document.getElementById("name").value;
+            var letters=/^[A-Za-z]+$/;	
+            var mail1=document.getElementById("mail").value;
+            //var gen=document.form.gender.value;//
+            if(x=="")
+            {
+              alert("userid must be fill");
+              return false;
+             
+              
+            }
+            if(x.length<5||x.length>12)
+             {
+                 alert("id is >5  <12");
+                 return false;
+                
+             }
+            if(y=="")
+	    {
+		alert("please enter passsword");
+                return false;
+		
+	    }
+	    if(y.length<7||y.length>12)
+	    {
+		alert("password is <7 or >12");
+                 return false;
+		
+	    }
+	    if(!name.match(letters))
+	    {
+		alert("please enter valid name");
+                 return false;
+                
+	    }
+            if(mail1=="")
+            {
+                alert("please enter mailid");
+                return false;
+            }
+            if(gen=="")
+            {
+                alert("please select gender");
+                  return false;
+            }
+
+	    
+	}
+      </script>
+ </head>
+<title>Form Validation</title>
+ <body>
+    
+        <table align="center" border="0">
+           <tr>
+            <td >userid:</td>
+             <td><input type="text" id="uid"/></td>
+           </tr>
+            <tr>
+                <td>passwd:</td>
+                 <td><input type="password" id="pwd"/></td>
+            </tr>
+                <td>name:</td>
+                <td><input type="text" id="name"/></td>
+            </tr>
+            <tr>
+             <td>adress:</td>
+              <td><input type="text"/></td>
+            </tr>
+            <tr>
+              <td>country:</td>
+               <td><input list="countries"></td>
+                    <datalist id="countries">
+                         <option>india</option>
+                         <option>china</option>
+                         <option>america</option>
+                   </datalist>
+            </tr>
+            <tr>
+             <td>pincode:</td>
+             <td><input type="text" maxlength="6"></td>
+            </tr>
+           <tr>
+               <td> Email:</td>
+               <td><input type="email" id="mail"/></td>
+           </tr>
+           <tr>
+                <td>Sex:</td>
+                <td><input type="radio" name="gender" value="male">male
+                <input type="radio" name="gender" value="female">female</td>
+           </tr>  
+           <tr>
+             <td>Languages:</td>
+              <td><input type="checkbox" name="lan1" value="telugu">telugu
+              <input type="checkbox" name="lan2" value="english">english	
+              <input type="checkbox" name="lan3" value="hindhi">hindhi</td>
+           </tr>
+          <tr>
+		<td></td>
+            <td><textarea rows="3" cols="30" placeholder="comments"></textarea></td>
+          </tr></br>
+          <tr>
+             <td></td>
+             <td><input type="submit"  value="submit" onclick="validate()"></td>
+          </tr>
+        </table> 
+                  
+     </body>
+</html>

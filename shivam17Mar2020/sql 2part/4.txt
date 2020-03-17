@@ -1,0 +1,2 @@
+select customer_id,customer_name, ifnull(ifnull(address,email_id),"NA")  as CONTACT_DETAILS  from customers
+order by customer_id;

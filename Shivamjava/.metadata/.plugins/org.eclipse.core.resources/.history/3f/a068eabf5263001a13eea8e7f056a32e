@@ -1,0 +1,7 @@
+
+public class JunitTestClass4 {
+
+	public void test1() {
+		System.out.println("Singh");
+	}
+}

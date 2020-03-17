@@ -1,0 +1,27 @@
+import java.io.*;
+public class FileDemo{
+        public static void main(String[] args)throws IOException,FileNotFoundException
+        {
+            FileReader f=new FileReader("log.txt");
+            BufferedReader br=new BufferedReader(f);
+            String s[],s1;
+            String word="";
+            int max=0,start=0;
+           
+            while((s1=br.readLine())!=null)
+            {
+                s=s1.split(" ");
+                for(int i=0;i<s.length;i++)
+                {
+                    start=s[i].length();
+                    if(start>max)
+                    {
+                        max=start;
+                        word=s[i];
+                    }
+                }
+            }
+            System.out.println(word);
+           
+        }
+}

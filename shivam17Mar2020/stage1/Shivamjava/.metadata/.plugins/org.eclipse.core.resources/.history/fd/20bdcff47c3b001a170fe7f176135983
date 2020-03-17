@@ -1,0 +1,45 @@
+package ExceptionExamplesAssessment;
+import java.util.function.*;
+import java.util.ArrayList;
+public class CombineInterfaceExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ArrayList <Student> list=new ArrayList<Student>();
+Student s1= new Student("Ahri",34);
+Student s2= new Student("QUhri",35);
+Student s3= new Student("Shi",64);
+Student s4= new Student("hri",84);
+Student s5= new Student("Dsjbh",69);
+list.add(s1);
+list.add(s2);
+list.add(s3);
+list.add(s4);
+list.add(s5);
+Predicate<Student> p=s->s.marks>=60;
+System.out.println(p.test(s1));
+
+Function<Student,String> f=s->{
+	int marks=s.marks;
+	if(marks>=80)
+		System.out.println("Distinction");
+	else if(marks>=70)
+		System.out.println("1st division");
+	else if(marks>=60)
+		System.out.println("2nd division");
+	else System.out.println("Failed");
+};
+	}
+
+}
+ class Student{
+	 String name;
+	 int marks;
+	public Student(String name, int marks) {
+		super();
+		this.name = name;
+		this.marks = marks;
+	}
+	 
+ }
+ 

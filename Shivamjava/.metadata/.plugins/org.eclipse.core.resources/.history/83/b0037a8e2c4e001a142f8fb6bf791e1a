@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class KasprurNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc= new Scanner(System.in);
+System.out.println("Enter the number");
+int a=sc.nextInt();
+int s=a*a;
+int s1=0,s2=0;
+int b=a;
+while(b!=0)
+{
+	b=a%10;
+s1=b+s1;
+
+	}
+	}
+
+}

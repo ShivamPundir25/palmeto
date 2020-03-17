@@ -1,0 +1,17 @@
+package Collections;
+import java.util.Collections;
+import java.util.ArrayList;
+
+public class CollectionsClassExamples {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ArrayList ar=new ArrayList();
+ar.add("Java");
+ar.add("Surya");
+ar.add("Sdhivam");
+ar.add("hari");
+System.out.println(ar);
+	}
+
+}

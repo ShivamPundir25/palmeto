@@ -1,0 +1,5 @@
+package beanPostBeforeInterface;
+
+public class InitBeans {
+
+}

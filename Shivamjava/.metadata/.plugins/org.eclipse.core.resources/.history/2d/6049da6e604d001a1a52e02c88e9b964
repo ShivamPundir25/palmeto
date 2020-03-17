@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.util.HashMap;
+public class UserMainCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter the size/or number of members:");
+int size=sc.nextInt();
+HashMap<Integer,String> hp1=new HashMap<Integer,String>();
+HashMap<Integer,Integer> hp2=new HashMap<Integer,Integer>();
+HashMap hp3=new HashMap();
+
+System.out.println("Enter the details");
+for(int i=1;i<=size;i++)
+{
+	System.out.println("Enter id of "+i);
+	int id=sc.nextInt();
+	System.out.println("Enter designation");
+	String designation=sc.next();
+	System.out.println("Enter salary");
+	int salary=sc.nextInt();
+	hp1.put(id, designation);
+	hp2.put(id, salary);
+	}
+	}
+
+}
+
+/*class details{
+int id;
+String designation;
+int salary;
+public details(int id, String designation, int salary) {
+	super();
+	this.id = id;
+	this.designation = designation;
+	this.salary = salary;
+}
+
+ }*/
